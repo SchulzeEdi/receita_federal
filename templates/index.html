@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Schulze</title>
+</head>
+<body>
+  <h1>Bem vindos ao Sistema Schulze</h1>
+  <h3>Insira o CNPJ</h3>
+    <form action="/incluir_empresa" method="POST">
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" id="cnpj" name="cnpj">
+        <input type="submit" value="Enviar">
+    </form>
+    <a href="/consulta_empresa"><button>Ir para Consulta</button></a>
+</body>
+</html>

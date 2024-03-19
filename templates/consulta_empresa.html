@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Consulta</title>
+</head>
+  <body>
+    <form method="POST" action="/consulta_empresa_filter">
+      <label for="vendedor_responsavel">Vendedor Responsável:</label>
+      <input type="text" name="vendedor_responsavel" id="vendedor_responsavel">
+      <button type="submit">Filtrar</button>
+    </form>
+  <h1>Tabela de Empresas</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>CNPJ</th>
+          <th>Situação</th>
+          <th>Tipo</th>
+          <th>Nome</th>
+          <th>Nome Fantasia</th>
+          <th>Estado</th>
+          <th>Municipio</th>
+          <th>Endereco</th>
+          <th>Natureza Jurídica</th>
+          <th>Porte</th>
+          <th>Atividade principal</th>
+          <th>Telefone</th>
+          <th>Número de funcionários</th>
+          <th>Faturamento Anual</th>
+          <th>Vendedor Responsável</th>
+          <th>Data de criação do registro em nosso sistema</th>
+          <th>Alterar Registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for empresa in empresas %}
+        <tr>
+          <td>{{ empresa.id }}</td>
+          <td>{{ empresa.cnpj }}</td>
+          <td>{{ "Ativa" if empresa.situacao else "Inativa" }}</td>
+          <td>{{ empresa.tipo }}</td>
+          <td>{{ empresa.nome }}</td>
+          <td>{{ empresa.fantasia }}</td>
+          <td>{{ empresa.uf }}</td>
+          <td>{{ empresa.municipio }}</td>
+          <td>{{ empresa.endereco }}</td>
+          <td>{{ empresa.natureza_juridica }}</td>
+          <td>{{ empresa.porte }}</td>
+          <td>{{ empresa.atividade_principal }}</td>
+          <td>{{ empresa.telefone }}</td>
+          <td>{{ empresa.num_funcionarios }}</td>
+          <td>{{ empresa.faturamento_anual }}</td>
+          <td>{{ empresa.vendedor_responsavel }}</td>
+          <td>{{ empresa.data_criacao }}</td>
+          <td><a href='/alterar_empresa_form/?id={{ empresa.id }}'><button>Alterar</button></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

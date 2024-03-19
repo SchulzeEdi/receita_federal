@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alteração de Empresa</title>
+</head>
+  <body>
+    <h1>Alteração de Empresa</h1>
+    <form method="POST" action="/alterar_empresa_dados/{{ empresa.cnpj }}">
+      <label for="cnpj">CNPJ: {{ empresa.cnpj }}</label>
+      <br>
+      <label for="situacao">Situação:</label>
+      <select name="situacao">
+        <option value="1">Ativa</option>
+        <option value="0">Inativa</option>
+      </select>
+      <br>
+      <label for="tipo">Tipo</label>
+      <input name="tipo" type="text" value="{{ empresa.tipo }}">
+      <br>
+      <label for="nome">Nome</label>
+      <input name="nome" type="text" value="{{ empresa.nome }}">
+      <br>
+      <label for="fantasia">Nome Fantasia</label>
+      <input name="fantasia" type="text" value="{{ empresa.fantasia }}">
+      <br>
+      <label for="uf">Estado</label>
+      <input name="uf" type="text" value="{{ empresa.uf }}">
+      <br>
+      <label for="municipio">Municipio</label>
+      <input name="municipio" type="text" value="{{ empresa.municipio }}">
+      <br>
+      <label for="endereco">Endereço</label>
+      <input name="endereco" type="text" value="{{ empresa.endereco }}">
+      <br>
+      <label for="natureza_juridica">Natureza Jurídica</label>
+      <input name="natureza_juridica" type="text" value="{{ empresa.natureza_juridica }}">
+      <br>
+      <label for="porte">Porte</label>
+      <input name="porte" type="text" value="{{ empresa.porte }}">
+      <br>
+      <label for="atividade_principal">Atividade Principal</label>
+      <input name="atividade_principal" type="text" value="{{ empresa.atividade_principal }}">
+      <br>
+      <label for="telefone">Telefone</label>
+      <input name="telefone" type="text" value="{{ empresa.telefone }}">
+      <br>
+      <label for="num_funcionarios">Número de funcionários</label>
+      <input name="num_funcionarios" type="text" value="{{ empresa.num_funcionarios }}">
+      <br>
+      <label for="faturamento_anual">Faturamento Anual</label>
+      <input name="faturamento_anual" type="text" value="{{ empresa.faturamento_anual }}">]
+      <br>
+      <label for="vendedor_responsavel">Vendedor Responsavel</label>
+      <input name="vendedor_responsavel" type="text" value="{{ empresa.vendedor_responsavel }}">
+      <br>
+      <button type="submit">Atualizar Empresa</button>
+    </form>
+  </body>
+</html>
